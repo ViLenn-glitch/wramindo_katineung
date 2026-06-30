@@ -10,6 +10,7 @@ app.use(express.json());
 const menuItems = [
     {
         id: 1,
+        category: "Makanan",
         name: "Indomie Nyemek Spesial",
         price: "Rp 15.000",
         desc: "Mie nyemek wangi dengan telur, sosis, dan kuah kental gurih.",
@@ -17,6 +18,7 @@ const menuItems = [
     },
     {
         id: 2,
+        category: "Makanan",
         name: "Magelangan",
         price: "Rp 15.000",
         desc: "Nasi goreng campur mie dengan sayuran, telur, bawang goreng, dan bumbu khas Warmindo.",
@@ -24,6 +26,7 @@ const menuItems = [
     },
     {
         id: 3,
+        category: "Makanan",
         name: "Indomie Kuah Susu Keju",
         price: "Rp 18.000",
         desc: "Sensasi creamy dari kuah susu dipadu keju cheddar meleleh.",
@@ -31,6 +34,7 @@ const menuItems = [
     },
     {
         id: 4,
+        category: "Makanan",
         name: "Indomie Seblak Mercon",
         price: "Rp 16.000",
         desc: "Pedas dengan kerupuk seblak, bakso, dan sosis.",
@@ -38,6 +42,7 @@ const menuItems = [
     },
     {
         id: 5,
+        category: "Minuman",
         name: "Es Teh",
         price: "Rp 5.000",
         desc: "Teh manis dingin yang menyegarkan.",
@@ -45,6 +50,7 @@ const menuItems = [
     },
     {
         id: 6,
+        category: "Minuman",
         name: "Es Kopi Susu Aren",
         price: "Rp 12.000",
         desc: "Kopi susu kekinian dengan gula aren asli.",
@@ -52,6 +58,7 @@ const menuItems = [
     },
     {
         id: 7,
+        category: "Makanan",
         name: "Indomie Kuah Soto",
         price: "Rp 12.000",
         desc: "Indomie soto segar dengan tambahan jeruk nipis.",
@@ -59,6 +66,7 @@ const menuItems = [
     },
     {
         id: 8,
+        category: "Makanan",
         name: "Indomie Goreng Rendang",
         price: "Rp 14.000",
         desc: "Indomie goreng dengan rasa rendang pedas.",
@@ -66,6 +74,7 @@ const menuItems = [
     },
     {
         id: 9,
+        category: "Minuman",
         name: "Susu Soda Gembira",
         price: "Rp 10.000",
         desc: "Soda segar dicampur susu dan sirup cocopandan.",
@@ -73,6 +82,7 @@ const menuItems = [
     },
     {
         id: 10,
+        category: "Makanan",
         name: "Kerupuk Pangsit",
         price: "Rp 3.000",
         desc: "Camilan pangsit goreng untuk teman makan mie.",
@@ -81,6 +91,7 @@ const menuItems = [
 
     {
         id: 11,
+        category: "Makanan",
         name: "Nasi Telor Dadar",
         price: "Rp 10.000",
         desc: "Nasi hangat dengan telur dadar gurih.",
@@ -88,6 +99,7 @@ const menuItems = [
     },
     {
         id: 12,
+        category: "Makanan",
         name: "Nasi Goreng Jawa Spesial",
         price: "Rp 20.000",
         desc: "Nasi goreng khas Jawa dengan bumbu rempah dan pelengkap spesial.",
@@ -95,6 +107,7 @@ const menuItems = [
     },
     {
         id: 13,
+        category: "Makanan",
         name: "Nasi Omelette Spesial",
         price: "Rp 19.000",
         desc: "Nasi dengan omelette lembut dan topping spesial.",
@@ -102,6 +115,7 @@ const menuItems = [
     },
     {
         id: 14,
+        category: "Makanan",
         name: "Nasi Omelette",
         price: "Rp 13.000",
         desc: "Nasi hangat dengan omelette gurih.",
@@ -109,6 +123,7 @@ const menuItems = [
     },
     {
         id: 15,
+        category: "Makanan",
         name: "Mie Tek Tek Spesial",
         price: "Rp 25.000",
         desc: "Mie tek tek dengan topping spesial yang lengkap.",
@@ -116,6 +131,7 @@ const menuItems = [
     },
     {
         id: 16,
+        category: "Makanan",
         name: "Mie Tek Tek Sosis",
         price: "Rp 14.000",
         desc: "Mie tek tek gurih dengan tambahan sosis.",
@@ -124,6 +140,7 @@ const menuItems = [
 
     {
         id: 17,
+        category: "Minuman",
         name: "Air Mineral",
         price: "Rp 3.000",
         desc: "Air mineral untuk menemani santapan Anda.",
@@ -131,6 +148,7 @@ const menuItems = [
     },
     {
         id: 18,
+        category: "Minuman",
         name: "Teh Panas",
         price: "Rp 3.000",
         desc: "Teh hangat dengan rasa manis yang pas.",
@@ -138,6 +156,7 @@ const menuItems = [
     },
     {
         id: 19,
+        category: "Minuman",
         name: "Teh Manis",
         price: "Rp 3.000",
         desc: "Teh manis untuk teman makan.",
@@ -145,6 +164,7 @@ const menuItems = [
     },
     {
         id: 20,
+        category: "Minuman",
         name: "Teh Tarik",
         price: "Rp 5.000",
         desc: "Teh susu dengan rasa lembut dan creamy.",
@@ -152,6 +172,7 @@ const menuItems = [
     },
     {
         id: 21,
+        category: "Minuman",
         name: "Kopi Hitam",
         price: "Rp 5.000",
         desc: "Kopi hitam hangat dengan aroma yang kuat.",
@@ -159,6 +180,7 @@ const menuItems = [
     },
     {
         id: 22,
+        category: "Minuman",
         name: "Kopi Susu",
         price: "Rp 5.000",
         desc: "Perpaduan kopi dan susu yang creamy.",
@@ -166,6 +188,7 @@ const menuItems = [
     },
     {
         id: 23,
+        category: "Minuman",
         name: "Good Day",
         price: "Rp 3.000",
         desc: "Minuman Good Day dengan berbagai pilihan rasa.",
@@ -173,6 +196,7 @@ const menuItems = [
     },
     {
         id: 24,
+        category: "Minuman",
         name: "Cappuccino",
         price: "Rp 5.000",
         desc: "Minuman cappuccino dengan rasa kopi yang lembut.",
@@ -180,6 +204,7 @@ const menuItems = [
     },
     {
         id: 25,
+        category: "Minuman",
         name: "Milo",
         price: "Rp 3.000",
         desc: "Minuman cokelat malt yang nikmat disajikan hangat atau dingin.",
@@ -187,6 +212,7 @@ const menuItems = [
     },
     {
         id: 26,
+        category: "Minuman",
         name: "Susu",
         price: "Rp 3.000",
         desc: "Susu hangat atau dingin untuk melengkapi pesanan.",
@@ -194,6 +220,7 @@ const menuItems = [
     },
     {
         id: 27,
+        category: "Minuman",
         name: "Jeruk",
         price: "Rp 3.000",
         desc: "Minuman jeruk segar dengan rasa manis dan asam.",
@@ -201,6 +228,7 @@ const menuItems = [
     },
     {
         id: 28,
+        category: "Minuman",
         name: "Jeruk Panas",
         price: "Rp 3.000",
         desc: "Minuman jeruk hangat yang menyegarkan.",
@@ -208,6 +236,7 @@ const menuItems = [
     },
     {
         id: 29,
+        category: "Minuman",
         name: "Jeruk Es",
         price: "Rp 3.000",
         desc: "Es jeruk segar untuk melepas dahaga.",
@@ -215,6 +244,7 @@ const menuItems = [
     },
     {
         id: 30,
+        category: "Minuman",
         name: "Nutrisari",
         price: "Rp 3.000",
         desc: "Minuman rasa buah yang segar dan manis.",
@@ -222,6 +252,7 @@ const menuItems = [
     },
     {
         id: 31,
+        category: "Minuman",
         name: "Susu Coklat",
         price: "Rp 3.000",
         desc: "Susu cokelat dengan rasa manis dan creamy.",
@@ -229,6 +260,7 @@ const menuItems = [
     },
     {
         id: 32,
+        category: "Minuman",
         name: "Susu Vanilla",
         price: "Rp 3.000",
         desc: "Susu vanilla dengan aroma lembut dan manis.",

@@ -28,7 +28,7 @@ function AdminDashboard() {
         setMessage('Menambahkan menu...');
         try {
             const token = localStorage.getItem('adminToken');
-            const response = await fetch('http://localhost:5000/api/menu/add', {
+            const response = await fetch('/api/menu/add', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

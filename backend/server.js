@@ -270,6 +270,9 @@ app.post('/api/menu/add', (req, res) => {
         res.status(403).json({ success: false, message: "Akses Ditolak! Anda bukan admin." });
     }
 });
-app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`Server listening on port ${PORT}`);
+    });
+}
+export default app;

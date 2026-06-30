@@ -1,4 +1,5 @@
 import "./App.css"
+import AdminDashboard from "./components/AdminDashboard"
 import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
 import About from "./components/About"
@@ -10,6 +11,12 @@ import Contact from "./components/Contact"
 import Footer from "./components/Footer"
 
 function App() {
+    const path = window.location.pathname;
+
+    if (path === '/admin') {
+        return <AdminDashboard />;
+    }
+
     return (
         <>
             <Navbar />

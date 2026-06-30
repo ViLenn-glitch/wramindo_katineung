@@ -239,7 +239,37 @@ const menuItems = [
 app.get("/api/menu", (req, res) => {
     res.json(menuItems);
 });
+// Implementasi security TANPA DATABASE menggunakan Hardcoded Password
+// Sebaiknya password ini disimpan di file .env 
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "nampol123";
+const SECRET_TOKEN = "token_rahasia_warmindo";
 
+app.post('/api/login', (req, res) => {
+    const { username, password } = req.body;
+
+    // Cek kredensial tanpa database
+    if (username === "admin" && password === ADMIN_PASSWORD) {
+        // Jika sukses, kembalikan token simulasi
+        res.json({ success: true, token: SECRET_TOKEN });
+    } else {
+        res.status(401).json({ success: false, message: "Username atau password salah!" });
+    }
+});
+
+// Contoh endpoint yang dilindungi (Harus pakai token)
+app.post('/api/menu/add', (req, res) => {
+    const token = req.headers.authorization;
+
+    if (token === SECRET_TOKEN) {
+        // Simulasi tambah data
+        const newItem = req.body;
+        newItem.id = menuItems.length + 1;
+        menuItems.push(newItem);
+        res.json({ success: true, message: "Menu berhasil ditambahkan!", menuItems });
+    } else {
+        res.status(403).json({ success: false, message: "Akses Ditolak! Anda bukan admin." });
+    }
+});
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
 });

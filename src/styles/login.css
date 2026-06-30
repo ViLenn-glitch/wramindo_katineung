@@ -1,0 +1,92 @@
+.login-section {
+    padding: 10rem 5%;
+    background-color: var(--bg-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.login-box {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-box h2 {
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+.login-box p {
+    color: var(--text-dark);
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+.error-message {
+    background-color: #fee;
+    color: #c00;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+@media (prefers-color-scheme: dark) {
+    .login-section {
+        background: var(--bg-dark);
+    }
+
+    .login-box {
+        background: #2A231F;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .input-group input {
+        background: #1A1512;
+        color: white;
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .error-message {
+        background-color: rgba(200, 0, 0, 0.2);
+    }
+}

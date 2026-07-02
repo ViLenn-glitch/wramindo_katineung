@@ -6,6 +6,7 @@ function AdminDashboard() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [menuData, setMenuData] = useState({
         name: '',
+        category: 'Makanan',
         price: '',
         desc: '',
         image: ''
@@ -40,7 +41,7 @@ function AdminDashboard() {
             const data = await response.json();
             if (data.success) {
                 setMessage('Berhasil: ' + data.message);
-                setMenuData({ name: '', price: '', desc: '', image: '' }); // reset form
+                setMenuData({ name: '', category: 'Makanan', price: '', desc: '', image: '' }); // reset form
             } else {
                 setMessage('Error: ' + data.message);
             }
@@ -81,6 +82,18 @@ function AdminDashboard() {
                                 required
                                 placeholder="Contoh: Indomie Telur Kornet"
                             />
+                        </div>
+                        <div className="form-group">
+                            <label>Kategori</label>
+                            <select
+                                name="category"
+                                value={menuData.category}
+                                onChange={handleChange}
+                                required
+                            >
+                                <option value="Makanan">Makanan</option>
+                                <option value="Minuman">Minuman</option>
+                            </select>
                         </div>
                         <div className="form-group">
                             <label>Harga</label>

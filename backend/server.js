@@ -14,10 +14,19 @@ app.use(cors());
 app.use(express.json());
 
 // 1. KONEKSI KE MONGODB
-console.log("Menghubungkan ke MongoDB...");
-mongoose.connect(process.env.MONGO_URI)
-    .then(() => console.log("Berhasil terhubung ke MongoDB!"))
-    .catch((err) => console.log("Gagal terhubung ke MongoDB:", err));
+let isConnected = false;
+
+const connectDB = async () => {
+    if (isConnected) return;
+    try {
+        console.log("Menghubungkan ke MongoDB...");
+        const db = await mongoose.connect(process.env.MONGO_URI);
+        isConnected = db.connections[0].readyState === 1;
+        console.log("Berhasil terhubung ke MongoDB!");
+    } catch (err) {
+        console.error("Gagal terhubung ke MongoDB:", err);
+    }
+};
 
 // 2. MEMBUAT SCHEMA (STRUKTUR DATA)
 const menuSchema = new mongoose.Schema({
@@ -42,6 +51,7 @@ const Menu = mongoose.model("Menu", menuSchema);
 
 // 3. API MENU
 app.get("/api/menu", async (req, res) => {
+    await connectDB();
     try {
         const menus = await Menu.find();
         res.json(menus);
@@ -55,7 +65,8 @@ app.get("/api/menu", async (req, res) => {
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "nampol123";
 const SECRET_TOKEN = "token_rahasia_warmindo";
 
-app.post('/api/login', (req, res) => {
+app.post('/api/login', async (req, res) => {
+    await connectDB();
     const { username, password } = req.body;
 
     if (username === "admin" && password === ADMIN_PASSWORD) {
@@ -69,6 +80,7 @@ app.post('/api/menu/add', async (req, res) => {
     const token = req.headers.authorization;
 
     if (token === SECRET_TOKEN) {
+        await connectDB();
         try {
             const newItem = new Menu(req.body);
             await newItem.save();
